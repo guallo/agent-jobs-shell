@@ -1,0 +1,4 @@
+venv/*
+!venv/gittrackdir
+
+**/__pycache__/
