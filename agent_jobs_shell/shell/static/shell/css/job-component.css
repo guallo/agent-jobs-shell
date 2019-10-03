@@ -1,0 +1,69 @@
+.job-component {
+    position: relative;
+    background-color: #baec80;
+    border: 1px solid #87c540;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.job-component-attr-label {
+    display: inline-block;
+    width: 33.3%;
+    vertical-align: top;
+    text-align: right;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.job-component-attr-value {
+    display: inline-block;
+    width: 66.6%;
+}
+
+.job-component-attr-label > * {
+    margin-right: 10px;
+}
+
+.job-component-attr-value > * {
+    width: 100%;
+    border: solid 1px #87c540;
+    border-radius: 5px;
+}
+
+.job-component-actions-container {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.job-component-actions-container > * {
+    float: left;
+    clear: both;
+}
+
+input[type="text"]:-moz-read-only {
+    color: gray;
+    border-style: none;
+    background-color: #C9C6C3;
+}
+
+input[type="text"]:read-only {
+    color: gray;
+    border-style: none;
+    background-color: #C9C6C3;
+}
+
+/* new job placeholder */
+
+.job-component.job-component-new {
+    background-color: #5372b0;
+    border: 1px solid #3b5997;
+}
+
+.job-component-new .job-component-attr-label {
+    color: white;
+}
+
+.job-component-new .job-component-attr-value > * {
+    border: solid 1px #3b5997;
+}

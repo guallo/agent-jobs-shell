@@ -1,0 +1,14 @@
+{% extends 'shell/base.html' %}
+
+{% block title %}Job List{% endblock %}
+
+{% block css_style %}
+    .job-list-component.job-list-component {
+        width: 66.6%;
+        margin: auto;
+    }
+{% endblock %}
+
+{% block content %}
+    {% include 'shell/job-list-component.html' with prepend_new_job_placeholder=True jobs=jobs %}
+{% endblock %}

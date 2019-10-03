@@ -1,0 +1,43 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'shell/css/job-component.css' %}"/>
+
+<form class="job-component {% if not job %} job-component-new {% endif %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="job-component-attrs-container">
+        {% if job %}
+            <div class="job-component-attr">
+                <div class="job-component-attr-label"><label>UUID</label></div><!--
+                --><div class="job-component-attr-value"><input name="uuid" type="text" value="{{ job.uuid }}" readonly/></div>
+            </div>
+        {% endif %}
+        <div class="job-component-attr">
+            <div class="job-component-attr-label"><label>CMD</label></div><!--
+            --><div class="job-component-attr-value"><textarea name="cmd">{{ job.cmd }}</textarea></div>
+        </div>
+        <div class="job-component-attr">
+            <div class="job-component-attr-label"><label>Directory</label></div><!--
+            --><div class="job-component-attr-value"><input name="directory" type="text" value="{{ job.directory }}"/></div>
+        </div>
+        <div class="job-component-attr">
+            <div class="job-component-attr-label"><label>User</label></div><!--
+            --><div class="job-component-attr-value"><input name="user" type="text" value="{{ job.user }}"/></div>
+        </div>
+        <div class="job-component-attr">
+            <div class="job-component-attr-label"><label>Payload</label></div><!--
+            --><div class="job-component-attr-value"><input name="payload" type="file"/></div>
+        </div>
+        <div class="job-component-attr">
+            <div class="job-component-attr-label"><label>Extra ENV JSON</label></div><!--
+            --><div class="job-component-attr-value"><textarea name="extra_env_json">{{ job.extra_env_json }}</textarea></div>
+        </div>
+    </div>
+    <div class="job-component-actions-container">
+        {% if not job %}
+            <button name="action" value="add" type="submit">Add</button>
+        {% else %}
+            <button name="action" value="update" type="submit">Update</button>
+            <button name="action" value="delete" type="submit">Delete</button>
+        {% endif %}
+    </div>
+</form>

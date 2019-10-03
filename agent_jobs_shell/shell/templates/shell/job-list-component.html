@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'shell/css/job-list-component.css' %}"/>
+
+<ul class="job-list-component">
+    {% if prepend_new_job_placeholder %}
+        <li>{% include 'shell/job-component.html' with job=None %}</li>
+    {% endif %}
+    
+    {% for job in jobs %}
+        <li>{% include 'shell/job-component.html' with job=job %}</li>
+    {% endfor %}
+</ul>
